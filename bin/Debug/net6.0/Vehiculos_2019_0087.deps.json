@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Vehiculos_2019_0087/1.0.0": {
+        "runtime": {
+          "Vehiculos_2019_0087.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Vehiculos_2019_0087/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
