@@ -1,12 +1,17 @@
-namespace Models;
+using System;
+using System.Collections.Generic;
 
-public class Vehiculo
+namespace Vehiculos_2019_0087
 {
-
-public int vehiculoID { get; set; }
-public string Marca { get; set; } = null!;
-public string? Modelo { get; set; }                                          
-public int Año { get; set; }                                          
-public string? Color { get; set; }                                          
-
+    public class Vehiculos
+    {
+    public int VehiculosId { get; set; }
+    public string Marca { get; set; } = null!;
+    public string Modelo { get; set; } = null!;
+    public string Anio { get; set; } = null!;
+    public string Color { get; set; } = null!;
+    }
 }
+
+
+

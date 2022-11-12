@@ -19,8 +19,8 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Vehiculos_2019_0087/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+[c:/Vehiculos_2019_0087/Pages/Autos.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0b3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/Vehiculos_2019_0087/Pages/FetchData.razor]
@@ -29,10 +29,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [c:/Vehiculos_2019_0087/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Vehiculos_2019_0087/Pages/VehiculosView.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVoaWN1bG9zVmlldy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/Vehiculos_2019_0087/Shared/SurveyPrompt.razor]
