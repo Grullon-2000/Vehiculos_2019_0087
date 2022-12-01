@@ -1,73 +1,115 @@
 ﻿@page "/vehiculos"
 
-@using Vehiculos_2019_0087.Data.Models;
+@using Data.Models;
 
-
-<div class="container">
-    <h3 class="font-weight-bold">**** Registro de Vehiculos ****</h3><br>
-
-<EditForm  Model="@vehiculos">
-
-    <div class="form-group">
-    <label for="Marca">Marca</label>
-    <input type="text" class="form-control" id="Marca" @bind-value="vehiculos.Marca" placeholder="Ingrese la Marca" required>
-    </div>
+<h1>Registro de Vehiculos</h1>
     
-    <div class="form-group">
-    <label for="Modelo">Modelo</label>
-    <input type="text" class="form-control" id="Modelo" @bind-value="vehiculos.Modelo" placeholder="Ingrese el Modelo" required>
+    <div class="mb-3 row">
+        <div class="col-6">
+            <label for="txtMarca">Marca</label>
+            <input @bind="@Marca" placeholder="Ingrese la Marca" class="form-control" type="text" name="txtMarca" id="txtMarca">
+        </div>
     </div>
 
-     <div class="form-group">
-    <label for="Anio">Año</label>
-    <input type="text" class="form-control" id="Anio" @bind-value="vehiculos.Anio" placeholder="Ingrese el año de vehiculo" required>
+    <div class="mb-3 row">
+        <div class="col-6">
+            <label for="txtModelo">Modelo</label>
+            <input @bind="@Modelo" placeholder="Ingrese el Modelo" class="form-control" type="text" name="txtModelo" id="txtModelo">
+        </div>
     </div>
 
-     <div class="form-group">
-    <label for="Color">Color</label>
-    <input type="text" class="form-control" id="Color" @bind-value="vehiculos.Color" placeholder="Ingrese su color de Preferencia" required>
+    <div class="mb-3 row">
+        <div class="col-6">
+            <label for="txtAnio">Año</label>
+            <input @bind="@Anio" placeholder="Ingrese el año" class="form-control" type="text" name="txtAnio" id="txtAnio">
+        </div>
     </div>
-    <button type="submit" class="btn btn-primary" @onclick="registrarVehiculos" style="width: 150; margin: 20px 10px">Registrar
+
+     <div class="mb-3 row">
+        <div class="col-6">
+            <label for="txtColor">Color</label>
+            <input @bind="@Color" placeholder="Ingrese el color" class="form-control" type="text" name="txtColor" id="txtColor">
+        </div>
+    </div>
+
+
+<button type="submit" class="btn btn-primary" @onclick="Agregar" style="width: 150; margin: 20px 10px">Registrar
 
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
   <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
   <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
 </svg>
     </button>
-    
-    
-    <button class="btn-danger" @onclick="limpiarCampos" style="width: 150px; margin: 20px 10px">Limpiar
+
+<button class="btn-danger" @onclick="limpiarCampos" style="width: 150px; margin: 20px 10px">Limpiar
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
   <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
 </svg>
     </button>
 
-</EditForm>
+
+
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+               
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Año</th>
+                <th>Color</th>
+    
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var vehiculo in Vehiculo)
+            {
+            <tr>
+            <th>@vehiculo.Marca</th>
+            <th>@vehiculo.Modelo</th>
+            <th>@vehiculo.Anio</th>
+            <th>@vehiculo.Color</th>
+            </tr>
+            }
+        </tbody>
+        <tfoot></tfoot>
+    </table>
 </div>
-
-<table class="table">
-
-<thead>
-    <tr>
-        <th>#</th>
-        <th>Marca</th>
-        <th>Modelo</th>
-        <th>Año</th>
-        <th>Color</th>
-    </tr>
-
-</thead>
-
-</table>
 
 @code
 {
+    public int VehiculosId { get; set; }
+    public string Marca { get; set; } = null!;
+    public string Modelo { get; set; } = null!;
+    public string Anio { get; set; } = null!;
+    public string Color { get; set; } = null!;
+
 Vehiculos vehiculos = new Vehiculos();
 
-void registrarVehiculos()
-{
+public List<Vehiculos> Vehiculo {get; set;} = null!;
 
+        protected override Task OnInitializedAsync()
+        {
+            Vehiculo = new List<Vehiculos>();
+            
+            return base.OnInitializedAsync();
+        }
+        
+void Agregar()
+{
+   Vehiculo.Add(new Vehiculos()
+   {
+        VehiculosId = 0,
+        Marca = Marca,
+        Modelo = Modelo,
+        Anio = Anio,
+        Color = Color,
+
+    });
 }
+
 
 void limpiarCampos()
 {
@@ -76,6 +118,7 @@ void limpiarCampos()
     vehiculos.Anio= "";
     vehiculos.Color= "";
 }
-
 }
+
+
 
